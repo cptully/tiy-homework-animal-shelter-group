@@ -1,3 +1,6 @@
+<%@ page import="com.theIronYard.entity.Animal" %>
+<%@ page import="com.theIronYard.entity.AnimalType" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,11 +19,26 @@
 
     <H2>List Animals</H2>
     <form action="/" method="post">
-        <label for="name">
-            Search for an Animal:
-        </label>
-        <input type="text" name="name" id="name" placeholder="animal's name">
+        <div>
+            <label for="name">
+                Search for an Animal:
+            </label>
+            <input type="text" name="name" id="name" placeholder="animal's name">
+        </div>
 
+        <div>
+            <label for="typeid">
+                Type:
+            </label>
+            <select name="typeid" id="typeid">
+                <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
+                    <option value="<% animalType.getTypeId() %>"
+                            <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType().getTypeName()) ? "select= 'true'" : ""%> >
+                        <%= animalType.getTypeName() %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
         
     </form>
 </body>
