@@ -26,6 +26,7 @@
             <input type="text" name="name" id="name" placeholder="animal's name">
         </div>
 
+<<<<<<< Updated upstream
         <div>
             <label for="typeid">
                 Type:
@@ -40,6 +41,9 @@
             </select>
         </div>
         
+=======
+
+>>>>>>> Stashed changes
     </form>
 </body>
 </html>
