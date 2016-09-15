@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Date;
+
+/**
+ * Created by chris on 8/16/16.
+ */
+public class MedicalRecord {
+    //private HashMap<String, String> immunizationRecord = new HashMap<>();
+    ArrayList<ImmunizationRecord> immunizationRecord = new ArrayList<>();
+    private double weight;
+    public String name;
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void addImmunization(String name, Date date, String comment){
+
+    }
+}

@@ -1,0 +1,10 @@
+import java.util.Date;
+
+/**
+ * Created by chris on 8/16/16.
+ */
+public class ImmunizationRecord {
+    String name;
+    Date date;
+
+}
