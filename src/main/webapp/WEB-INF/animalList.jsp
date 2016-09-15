@@ -1,6 +1,8 @@
 <%@ page import="com.theIronYard.entity.Animal" %>
 <%@ page import="com.theIronYard.entity.AnimalType" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.theIronYard.entity.AnimalBreed" %>
+<%@ page import="com.theIronYard.entity.Note" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,15 +25,15 @@
             <label for="name">
                 Search for an Animal:
             </label>
-            <input type="text" name="name" id="name" placeholder="animal's name">
+            <input type="text" name="name" id="name" placeholder="animal's name" value="${animal.getName()}">
         </div>
 
-<<<<<<< Updated upstream
         <div>
             <label for="typeid">
                 Type:
             </label>
-            <select name="typeid" id="typeid">
+            <select name="typeid" id="typeid" >
+                <option></option>
                 <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
                     <option value="<% animalType.getTypeId() %>"
                             <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType().getTypeName()) ? "select= 'true'" : ""%> >
@@ -40,10 +42,56 @@
                 <% } %>
             </select>
         </div>
-        
-=======
 
->>>>>>> Stashed changes
+        <div>
+            <label for="breedid">
+                Breed:
+            </label>
+            <select name="breedid" id="breedid">
+                <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
+                <option value="<% animalBreed.getTypeId() %>"
+                        <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed().getName()) ? "select= 'true'" : ""%> >
+                    <%= animalBreed.getName() %>
+                </option>
+                <% } %>
+            </select>
+        </div>
+
+
+        <div>
+            <label for="animalid">
+                Animal ID:
+            </label>
+            <input type="text" name="animalid" id="animalid" value="${animal.getId()}">
+        </div>
+
+        <button>Search</button>
+
     </form>
+
+
+
+<section>
+    <% for(Animal animal : (ArrayList<Animal>)request.getAttribute("animals")) { %>
+
+    <div class="animal">
+        <img src="images/captainmycaptain.jpg" />
+
+        <div class="detail">
+            <a href="/animalForm?id=<%= animal.getId() %>"><%= animal.getName()%></a><br/>
+            <strong>Type:</strong> <%= animal.getType().getTypeName()%><br/>
+            <strong>Breed:</strong> <%= animal.getBreed().getName()%><br/>
+            <strong>Color:</strong> <%= animal.getColor()%><br/>
+            <strong>Description:</strong> <%= animal.getDescription()%><br/>
+            <strong>Notes:</strong> <br/>
+            <% for(Note note : (ArrayList<Note>)request.getAttribute("notes")) { %>
+            
+            <% } %>
+        </div>
+    </div>
+
+    <% } %>
+
+</section>
 </body>
 </html>
