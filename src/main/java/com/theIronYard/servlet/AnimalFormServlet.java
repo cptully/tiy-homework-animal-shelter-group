@@ -7,6 +7,7 @@ import com.theIronYard.factory.ServiceFactory;
 import com.theIronYard.service.AnimalService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.List;
 /**
  * Created by chris on 9/15/16.
  */
+@WebServlet("/animalForm")
 public class AnimalFormServlet extends AbstractServlet {
 
     @Override
@@ -121,6 +123,9 @@ public class AnimalFormServlet extends AbstractServlet {
 
 
             }
+
+            
+
         } catch (SQLException e) {
             throw new ServletException("something went wrong", e);
         }

@@ -47,7 +47,7 @@
             <option></option>
             <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
             <option value="<%= animalType.getTypeId() %>"
-                    <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType().getTypeName()) ? "selected='true'" : "" %>>
+                    <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType()) ? "selected='true'" : "" %>>
                 <%= animalType.getTypeName()%>
             </option>
             <% } %>
@@ -58,12 +58,18 @@
     </label>
     <select name="breedid" id="breedid">
         <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
-        <option value="<% animalBreed.getTypeId() %>"
-                <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed().getName()) ? "select= 'true'" : ""%> >
+        <option value="<%= animalBreed.getTypeId() %>"
+                <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed()) ? "select= 'true'" : ""%> >
             <%= animalBreed.getName() %>
         </option>
         <% } %>
     </select>
+    <div>
+        <label for="color">
+            Color:
+        </label>
+        <input type="text" name="color" id="color" value="${animal.getColor()}">
+    </div>
     <div>
         <label for="description">
             Description:
@@ -71,7 +77,13 @@
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
 
-    <!--not sure about the image upload-->
+    <img src="images/captainmycaptain.jpg" />
+
+    <div>
+        <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
+    </div>
+
 </form>
 </body>
 </html>
