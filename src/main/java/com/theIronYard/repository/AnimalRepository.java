@@ -10,15 +10,10 @@ import java.sql.*;
 public class AnimalRepository {
     // properties
     private Connection connection;
-    private String jdbcUrl = "jdbc:postgresql://localhost/animalrepository_test";
-
 
     // constructor
-    public AnimalRepository(String jdbcUrl) throws SQLException {
-        if (!jdbcUrl.equals("")) {
-            this.jdbcUrl = jdbcUrl;
-        }
-        this.connection = DriverManager.getConnection(this.jdbcUrl);
+    public AnimalRepository(Connection connection) throws SQLException {
+        this.connection = connection;
     }
 
     // private methods

@@ -10,15 +10,13 @@ import java.util.ArrayList;
  */
 public class NoteRepository {
     // properties
-    private ArrayList<Note> animalNotes = new ArrayList<>();
     private Connection connection;
-    private String jdbcUrl = "jdbc:postgresql://localhost/animalrepository_test";
+    private ArrayList<Note> animalNotes = new ArrayList<>();
     private Statement statement;
 
     // constructor
-    public NoteRepository(String jdbcUrl) throws SQLException {
-        if (!jdbcUrl.equals("")) {this.jdbcUrl = jdbcUrl;}
-        this.connection = DriverManager.getConnection(this.jdbcUrl);
+    public NoteRepository(Connection connection) throws SQLException {
+        this.connection = connection;
     }
 
     // getters and setters

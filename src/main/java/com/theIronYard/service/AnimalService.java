@@ -26,8 +26,8 @@ public class AnimalService {
      * @param animalRepository an AnimalRepository object
      */
     public AnimalService(AnimalRepository animalRepository,
-                         AnimalBreedRepository animalBreedRepository,
                          AnimalTypeRepository animalTypeRepository,
+                         AnimalBreedRepository animalBreedRepository,
                          NoteRepository noteRepository) {
         this.animalRepository = animalRepository;
         this.animalBreedRepository = animalBreedRepository;

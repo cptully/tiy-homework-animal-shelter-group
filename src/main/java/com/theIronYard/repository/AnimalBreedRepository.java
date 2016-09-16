@@ -12,13 +12,11 @@ public class AnimalBreedRepository {
     // properties
     private ArrayList<AnimalBreed> animalBreeds = new ArrayList<>();
     private Connection connection;
-    private String jdbcUrl = "jdbc:postgresql://localhost/animalrepository_test";
     private Statement statement;
 
     // constructor
-    public AnimalBreedRepository(String jdbcUrl) throws SQLException {
-        if (!jdbcUrl.equals("")) {this.jdbcUrl = jdbcUrl;}
-        this.connection = DriverManager.getConnection(this.jdbcUrl);
+    public AnimalBreedRepository(Connection connection) throws SQLException {
+        this.connection = connection;
     }
 
     // getters and setters

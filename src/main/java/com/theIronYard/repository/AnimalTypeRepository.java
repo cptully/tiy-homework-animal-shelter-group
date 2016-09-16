@@ -12,12 +12,10 @@ public class AnimalTypeRepository {
     // properties
     private ArrayList<AnimalType> animalTypes = new ArrayList<>();
     private Connection connection;
-    private String jdbcUrl = "jdbc:postgresql://localhost/animalrepository_test";
 
     // constructor
-    public AnimalTypeRepository(String jdbcUrl) throws SQLException {
-        if (!jdbcUrl.equals("")) {this.jdbcUrl = jdbcUrl;}
-        this.connection = DriverManager.getConnection(this.jdbcUrl);
+    public AnimalTypeRepository(Connection connection) throws SQLException {
+        this.connection = connection;
     }
 
     // getters and setters
