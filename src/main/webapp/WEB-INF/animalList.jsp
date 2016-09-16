@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <h1>Chris Dave and Jeff's Animal Shelter</h1>
+    <h1>Chris, Dave and Jeff's Animal Shelter</h1>
 
     <nav>
         <ul>
