@@ -17,18 +17,6 @@ import java.util.List;
  * Created by chris on 9/15/16.
  */
 public class AnimalFormServlet extends AbstractServlet {
-    private AnimalService animalService;
-
-    @Override
-    public void init() throws ServletException {
-
-        // get link to animalService
-        try {
-            this.animalService = ServiceFactory.getAnimalService();
-        } catch (ClassNotFoundException | SQLException | IOException e) {
-            throw new ServletException("Something went wrong initializing servlet " + this.getClass().getCanonicalName(), e);
-        }
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
