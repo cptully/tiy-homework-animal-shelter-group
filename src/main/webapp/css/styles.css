@@ -92,8 +92,24 @@ form {
     float: left;
 }
 
+form input[type="text"] {
+    width: 200px;
+    margin-right: 2em;
+}
+
 #mainImage {
     clear: right;
-    float: right;
+    float: left;
     display: inline-block;
+    width: 200px;
+}
+
+.buttonbar {
+    margin: 2em;
+
+}
+
+.noteLabel{
+    display: block;
+    width: 100%
 }

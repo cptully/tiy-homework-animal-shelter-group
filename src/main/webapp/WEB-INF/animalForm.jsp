@@ -80,7 +80,7 @@
         </label>
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
-    <div>
+    <div class="buttonbar">
         <button type="submit" name="saveAnimal" value="save">Save Animal</button>
         <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>

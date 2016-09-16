@@ -46,14 +46,20 @@ nav a {
     /*display: inline;*/
 }
 
-label {
+form div {
     display: inline-block;
+    width: 12em;
+}
+
+form div label {
+    display: block;
     width: 100px;
     margin: 0.25em;
 }
 
 label input {
     margin-top: -10px;
+    font-size: large;
 }
 
 button {
@@ -81,10 +87,6 @@ h1, h2, h3, h4 {
     color: red;
 }
 
-textarea {
-    width: 60em;
-    height: 5em;
-}
 
 form {
     clear: left;
@@ -92,24 +94,18 @@ form {
     float: left;
 }
 
-form input[type="text"] {
-    width: 200px;
-    margin-right: 2em;
-}
-
-#mainImage {
-    clear: right;
-    float: left;
-    display: inline-block;
-    width: 200px;
-}
-
-.buttonbar {
-    margin: 2em;
-
-}
-
-.noteLabel{
+.animal{
     display: block;
-    width: 100%
+    border: 1px solid black;
+    clear: both;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+}
+
+.animal img{
+    width: 100px;
+    display: inline-block;
+    float: left;
+    margin-right: 1em;
+    vertical-align: top;
 }

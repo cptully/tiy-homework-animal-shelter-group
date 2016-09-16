@@ -7,7 +7,7 @@
 <html>
 <head>
     <title>Animal Shelter</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/listStyles.css" />
 </head>
 <body>
     <h1>Chris, Dave and Jeff's Animal Shelter</h1>
@@ -21,19 +21,20 @@
 
     <H2>List Animals</H2>
     <form action="/" method="post">
+        <h3>Search for an Animal:</h3>
         <div>
             <label for="name">
-                Search for an Animal:
+                <Strong>Name:</Strong>
             </label>
             <input type="text" name="name" id="name" placeholder="animal's name" value="${animal.getName()}">
         </div>
 
         <div>
             <label for="typeId">
-                Type:
+                <strong>Type:</strong>
             </label>
             <select name="typeId" id="typeId">
-                <option></option>
+                <option>select...</option>
                 <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
                     <option value="<%= animalType.getTypeId() %>"
                             <%= request.getAttribute("typeId") != null && animalType.getTypeId() == (int)request.getAttribute("typeId") ? "selected='true'" : "" %> >
@@ -45,10 +46,10 @@
 
         <div>
             <label for="breedId">
-                Breed:
+                <strong>Breed:</strong>
             </label>
             <select name="breedId" id="breedId">
-                <option></option>
+                <option>select...</option>
                 <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
                 <option value="<%= animalBreed.getTypeId() %>"
                         <%= request.getAttribute("breedId") != null && animalBreed.getBreedId() == (int)request.getAttribute("breedId") ? "selected='true'" : ""%> >
@@ -61,7 +62,7 @@
 
         <div>
             <label for="animalid">
-                Animal ID:
+                <strong>Animal ID:</strong>
             </label>
             <input type="text" name="animalid" id="animalid" value="${animal.getId()}">
         </div>

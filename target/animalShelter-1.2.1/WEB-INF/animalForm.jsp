@@ -81,6 +81,12 @@
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
     <div>
+        <label for="note" class="noteLabel">
+            <strong>Add a note:</strong>
+        </label>
+        <textarea name="note" id="note"></textarea>
+    </div>
+    <div class="buttonbar">
         <button type="submit" name="saveAnimal" value="save">Save Animal</button>
         <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>
