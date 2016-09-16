@@ -19,14 +19,17 @@
 
 <h1>Chris, Dave and Jeff's Animal Shelter</h1>
 
-<ul>
-    <li><a href="/">List Animals</a></li>
-    <li><a href="/animalForm">Add an Animal</a></li>
-</ul>
+<nav>
+    <ul>
+        <li><a href="/">List Animals</a></li>
+        <li><a href="/animalForm">Add an Animal</a></li>
+    </ul>
+</nav>
 
 <h2> Add / Edit an Animal</h2>
 
-<p>* indicates a required field</p>
+
+<p><span class="required">*</span> indicates a required field</p>
 
 <form action="/animalForm" method="post">
 
@@ -34,14 +37,14 @@
 
     <div>
         <label for="name">
-            Name:
+            <strong>Name:</strong> <span class="required">*</span>
         </label>
         <input type="text" name="name" id="name" value="${animal.getName()}">
     </div>
 
     <div>
         <label for="typeId">
-            Type:
+            <strong>Type:</strong> <span class="required">*</span>
         </label>
         <select name="typeId" id="typeId">
             <option></option>
@@ -54,7 +57,7 @@
         </select>
     </div>
     <label for="breedId">
-        Breed:
+        <strong>Breed:</strong>
     </label>
     <select name="breedId" id="breedId">
         <option></option>
@@ -67,24 +70,22 @@
     </select>
     <div>
         <label for="color">
-            Color:
+            <strong>Color:</strong>
         </label>
         <input type="text" name="color" id="color" value="${animal.getColor()}">
     </div>
     <div>
         <label for="description">
-            Description:
+            <strong>Description:</strong>
         </label>
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
-
-    <img src="images/captainmycaptain.jpg" />
-
     <div>
         <button type="submit" name="saveAnimal" value="save">Save Animal</button>
         <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>
-
 </form>
+
+<img id="mainImage" src="images/captainmycaptain.jpg" />
 </body>
 </html>
