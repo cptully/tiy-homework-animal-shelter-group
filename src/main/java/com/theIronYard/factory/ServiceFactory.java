@@ -25,7 +25,7 @@ public class ServiceFactory {
     /**
      * This method returns a single animalService that is shared among anything
      * that uses this method to load it.
-     * @return WidgetService
+     * @return AnimalService
      * @throws ClassNotFoundException
      * @throws SQLException
      * @throws IOException

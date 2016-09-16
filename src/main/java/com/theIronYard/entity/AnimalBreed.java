@@ -18,10 +18,10 @@ public class AnimalBreed {
         this.typeId = typeId;
     }
 
-    public AnimalBreed(String name) {
+    /*public AnimalBreed(String name) {
         this.name = name;
     }
-
+*/
     public int getBreedId() {
         return breedId;
     }
