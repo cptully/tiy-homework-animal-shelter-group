@@ -29,10 +29,10 @@
         </div>
 
         <div>
-            <label for="typeid">
+            <label for="typeId">
                 Type:
             </label>
-            <select name="typeid" id="typeid">
+            <select name="typeId" id="typeId">
                 <option></option>
                 <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
                     <option value="<%= animalType.getTypeId() %>"
@@ -44,10 +44,11 @@
         </div>
 
         <div>
-            <label for="breedid">
+            <label for="breedId">
                 Breed:
             </label>
-            <select name="breedid" id="breedid">
+            <select name="breedId" id="breedId">
+                <option></option>
                 <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
                 <option value="<%= animalBreed.getTypeId() %>"
                         <%= request.getAttribute("breedId") != null && animalBreed.getBreedId() == (int)request.getAttribute("breedId") ? "selected='true'" : ""%> >

@@ -12,6 +12,10 @@ public class AnimalType {
         this.name = name;
     }
 
+    public AnimalType() {
+        this.id = 0;
+        this.name = "";
+    }
     public AnimalType(String name) {
         this.name = name;
     }

@@ -48,8 +48,8 @@ public class Animal {
      */
     public Animal() {
         this.name = "";
-        this.type = null;
-        this.breed = null;
+        this.type = new AnimalType();
+        this.breed = new AnimalBreed();
         this.color = "";
         this.description = "";
         this.notes = new ArrayList<>();

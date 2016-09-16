@@ -40,26 +40,27 @@
     </div>
 
     <div>
-        <label for="typeid">
+        <label for="typeId">
             Type:
         </label>
-        <select name="typeid" id="typeid">
+        <select name="typeId" id="typeId">
             <option></option>
             <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
             <option value="<%= animalType.getTypeId() %>"
-                    <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType()) ? "selected='true'" : "" %>>
+                    <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType().getTypeName()) ? "selected='true'" : "" %>>
                 <%= animalType.getTypeName()%>
             </option>
             <% } %>
         </select>
     </div>
-    <label for="breedid">
+    <label for="breedId">
         Breed:
     </label>
-    <select name="breedid" id="breedid">
+    <select name="breedId" id="breedId">
+        <option></option>
         <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
         <option value="<%= animalBreed.getTypeId() %>"
-                <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed()) ? "select= 'true'" : ""%> >
+                <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed().getName()) ? "selected='true'" : ""%> >
             <%= animalBreed.getName() %>
         </option>
         <% } %>
@@ -80,8 +81,8 @@
     <img src="images/captainmycaptain.jpg" />
 
     <div>
-        <button>Save Animal</button>
-        <button>Delete Animal</button>
+        <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>
 
 </form>
