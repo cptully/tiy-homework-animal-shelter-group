@@ -32,11 +32,11 @@
             <label for="typeid">
                 Type:
             </label>
-            <select name="typeid" id="typeid" >
+            <select name="typeid" id="typeid">
                 <option></option>
                 <% for(AnimalType animalType : (ArrayList<AnimalType>)request.getAttribute("types")) { %>
-                    <option value="<% animalType.getTypeId() %>"
-                            <%= animalType.getTypeName().equals(((Animal)request.getAttribute("animal")).getType().getTypeName()) ? "select= 'true'" : ""%> >
+                    <option value="<%= animalType.getTypeId() %>"
+                            <%= request.getAttribute("typeId") != null && animalType.getTypeId() == (int)request.getAttribute("typeId") ? "selected='true'" : "" %> >
                         <%= animalType.getTypeName() %>
                     </option>
                 <% } %>
@@ -49,8 +49,8 @@
             </label>
             <select name="breedid" id="breedid">
                 <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
-                <option value="<% animalBreed.getTypeId() %>"
-                        <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed().getName()) ? "select= 'true'" : ""%> >
+                <option value="<%= animalBreed.getTypeId() %>"
+                        <%= request.getAttribute("breedId") != null && animalBreed.getBreedId() == (int)request.getAttribute("breedId") ? "selected='true'" : ""%> >
                     <%= animalBreed.getName() %>
                 </option>
                 <% } %>
@@ -84,9 +84,9 @@
             <strong>Color:</strong> <%= animal.getColor()%><br/>
             <strong>Description:</strong> <%= animal.getDescription()%><br/>
             <strong>Notes:</strong> <br/>
-            <% for(Note note : (ArrayList<Note>)request.getAttribute("notes")) { %>
+<%--            <% for(Note note : (ArrayList<Note>)request.getAttribute("notes")) { %>
             
-            <% } %>
+            <% } %> --%>
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 package com.theIronYard.servlet;
 
 import com.theIronYard.entity.Animal;
+import com.theIronYard.entity.AnimalBreed;
 import com.theIronYard.entity.AnimalType;
 import com.theIronYard.service.AnimalService;
 
@@ -37,11 +38,15 @@ public class AnimalListServlet extends AbstractServlet {
             req.setAttribute("id", id);
 
             // need to make sure listTypes is the correct method to call
-            List<AnimalType> types = animalService.listTypes(/* Possible arguments? */);
+            List<AnimalType> types = animalService.listTypes();
             req.setAttribute("types", types);
 
+            // need to make sure listTypes is the correct method to call
+            List<AnimalBreed> breeds = animalService.listBreeds();
+            req.setAttribute("breeds", breeds);
+
             // need to make sure listAnimals is the correct method to call
-            List<Animal> animals = animalService.listAnimals(/* Possible arguments? */);
+            List<Animal> animals = animalService.listAnimals();
             req.setAttribute("animals", animals);
 
         } catch (SQLException e) {
