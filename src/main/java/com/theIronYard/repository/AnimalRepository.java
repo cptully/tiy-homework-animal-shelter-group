@@ -11,6 +11,7 @@ public class AnimalRepository {
     // properties
     private Connection connection;
 
+
     // constructor
     public AnimalRepository(Connection connection) throws SQLException {
         this.connection = connection;
