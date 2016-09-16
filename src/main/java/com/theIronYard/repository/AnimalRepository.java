@@ -10,7 +10,7 @@ import java.sql.*;
 public class AnimalRepository {
     // properties
     private Connection connection;
-    private String jdbcUrl = "jdbc:postgresql://localhost/animalrepository_test";
+    private String jdbcUrl = "jdbc:postgresql://localhost:5432/animal2";
 
 
     // constructor
