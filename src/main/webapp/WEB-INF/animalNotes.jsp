@@ -1,5 +1,6 @@
 <%@ page import="com.theIronYard.entity.Note" %>
-<%@ page import="com.theIronYard.entity.Animal" %><%--
+<%@ page import="com.theIronYard.entity.Animal" %>
+<%--
   Created by IntelliJ IDEA.
   User:
   Date: 9/16/16
@@ -24,15 +25,14 @@
 <h2>Animal Notes</h2>
 
 <div class="animal">
-    <img src="images/captainmycaptain.jpg" />
+    <img src="/images/captainmycaptain.jpg" />
 
     <div class="detail">
-        <a href="/animalForm?id=${animal.getId()}">${animal.getName()}</a><br/>
-        <strong>Type:</strong> ${animal.getType()}<br/>
-        <strong>Width:</strong> ${animal.getWidth()}<br/>
-        <strong>Height:</strong> ${animal.getHeight()}<br/>
-        <strong>Length:</strong> ${animal.getLength()}<br/>
-        <strong>Weight:</strong> ${animal.getWidth()}<br/>
+        <a href="animalForm?id=${animal.getId()}">${animal.getName()}</a><br/>
+        <strong>Type:</strong> ${animal.getType().getTypeName()}<br/>
+        <strong>Breed:</strong> ${animal.getBreed().getBreed}<br/>
+        <strong>Color:</strong> ${animal.getColor()}<br/>
+        <strong>Description:</strong> ${animal.getDescription()}<br/>
     </div>
 </div>
 
@@ -42,7 +42,6 @@
         <th>Note</th>
         <th></th>
     </tr>
-
     <% Animal animal = (Animal)request.getAttribute("animal"); %>
     <% for(Note note : animal.getNotes()){ %>
     <tr>
@@ -65,7 +64,7 @@
 
     <div>
         <label for="note" class="noteLabel">
-            Add a note:
+            <strong>Add a note:</strong>
         </label>
         <textarea name="note" id="note"></textarea>
 

@@ -63,6 +63,7 @@ public class Animal {
     public String getColor(){ return this.color; }
     public int getId() {return id;}
     public ArrayList<Note> getNotes() {return notes;}
+    public int getNoteCount() {return notes.size();}
 
 
     /*

@@ -56,7 +56,7 @@ public class AnimalFormServlet extends AbstractServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
         try {
             // get the posted data
             if (req.getParameter("saveAnimal") != null) {
@@ -65,10 +65,40 @@ public class AnimalFormServlet extends AbstractServlet {
             } else if (req.getParameter("deleteAnimal") != null) {
                 deleteAnimal(req, resp);
                 resp.sendRedirect("/");
+            } else if (req.getParameter("editNotes") != null) {
+                if (checkForUnsavedData(req, resp)) {
+                    req.setAttribute("unSavedData","Do you want to abandon your edits?");
+                }
+                // TODO: 9/17/16 implement the edit notes page
+                // editNotes();
             }
-        } catch (SQLException e) {
-            throw new ServletException("something went wrong", e);
+        } catch (IOException | SQLException e) {
+            throw new ServletException("something went wrong on the animalForm", e);
         }
+    }
+
+    private boolean checkForUnsavedData(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+        // get the animal id from the form
+        Integer id = getParameterAsInt(req, "id");
+
+        // if the id exists and is not zero check for edits
+        if (id != null && id != 0) {
+            Animal animal = animalService.getAnimal(id);
+
+            // name
+            if (!getParameterAsString(req, "name").equals(animal.getName())) {
+                return true;
+            } else if (!getParameterAsInt(req, "typeId").equals(animal.getType().getTypeId())) {
+                return true;
+            } else if (!getParameterAsInt(req, "breedId").equals(animal.getBreed().getBreedId())) {
+                return true;
+            } else if (!getParameterAsString(req, "color").equals(animal.getColor())) {
+                return true;
+            } else if (!getParameterAsString(req, "description").equals(animal.getDescription())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void deleteAnimal(HttpServletRequest req, HttpServletResponse resp) throws SQLException {

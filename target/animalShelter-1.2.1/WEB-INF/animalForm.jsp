@@ -2,6 +2,7 @@
 <%@ page import="com.theIronYard.entity.AnimalBreed" %>
 <%@ page import="com.theIronYard.entity.AnimalType" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.theIronYard.entity.Note" %>
 <%--
   Created by IntelliJ IDEA.
   User: dave
@@ -81,13 +82,33 @@
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
     <div>
-        <label for="note" class="noteLabel">
-            <strong>Add a note:</strong>
+        <label for="notes">
+            <strong>Notes</strong>
         </label>
-        <textarea name="note" id="note"></textarea>
+        <table id="notes">
+            <tr>
+                <th>Date</th>
+                <th>Note</th>
+            </tr>
+
+            <% Animal animal = (Animal)request.getAttribute("animal"); %>
+            <% for(Note note : animal.getNotes()){ %>
+            <tr>
+                <td>
+                    <!-- TODO: format date!!!! -->
+                    <%= note.getDate() %>
+                </td>
+                <td>
+                    <%= note.getContent() %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+
     </div>
     <div class="buttonbar">
         <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
         <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>
 </form>
