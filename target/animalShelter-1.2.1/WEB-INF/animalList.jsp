@@ -86,9 +86,7 @@
             <strong>Color:</strong> <%= animal.getColor()%><br/>
             <strong>Description:</strong> <%= animal.getDescription()%><br/>
             <strong>Notes:</strong> <%= animal.getNoteCount()%> notes <br/>
-<%--            <% for(Note note : (ArrayList<Note>)request.getAttribute("notes")) { %>
-            
-            <% } %> --%>
+
         </div>
     </div>
 

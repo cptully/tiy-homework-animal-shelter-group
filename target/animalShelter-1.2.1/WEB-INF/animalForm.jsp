@@ -11,6 +11,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%--<c:if test="${not empty loginError">--%>
+    <%--<script>--%>
+        <%--window.addEventListener("load",function(){--%>
+            <%--alert("${loginError}");--%>
+        <%--}--%>
+    <%--</script>--%>
+<%--</c:if>--%>
+
 <html>
 <head>
     <title>Add / Edit Animal</title>
@@ -95,7 +104,7 @@
             <% for(Note note : animal.getNotes()){ %>
             <tr>
                 <td>
-                    <!-- TODO: format date!!!! -->
+                    <!-- TODO: format the date!!!! -->
                     <%= note.getDate() %>
                 </td>
                 <td>
@@ -108,6 +117,7 @@
     </div>
     <div class="buttonbar">
         <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <!-- TODO: implement an are you sure check see TODO in AnimalFormServlet -->
         <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
         <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
     </div>

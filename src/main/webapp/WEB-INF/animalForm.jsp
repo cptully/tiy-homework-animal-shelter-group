@@ -12,13 +12,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<c:if test="${not empty loginError">
-    <script>
-        window.addEventListener("load",function(){
-            alert("${loginError}");
-        }
-    </script>
-</c:if>
+<%--<c:if test="${not empty loginError">--%>
+    <%--<script>--%>
+        <%--window.addEventListener("load",function(){--%>
+            <%--alert("${loginError}");--%>
+        <%--}--%>
+    <%--</script>--%>
+<%--</c:if>--%>
 
 <html>
 <head>
