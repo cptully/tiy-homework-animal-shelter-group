@@ -1,18 +1,19 @@
-<%@ page import="com.theIronYard.entity.Animal" %>
-<%@ page import="com.theIronYard.entity.Note" %>
 <%@ page import="com.theIronYard.entity.AnimalBreed" %><%--
   Created by IntelliJ IDEA.
-  User: chris
-  Date: 9/16/16
-  Time: 1:23 PM
+  User: davehochstrasser
+  Date: 9/17/16
+  Time: 5:48 PM
   To change this template use File | Settings | File Templates.
+
 --%>
 <%@ page contentBreed="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Manage Animal Breeds</title>
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+
 <table>
     <tr>
         <th>Breed</th>
@@ -29,8 +30,8 @@
     </tr>
     <% } %>
 </table>
-<form>
 
+<form>
     <div>
         <label for="name">
             <strong>Breed:</strong>
@@ -38,8 +39,10 @@
         <input type="text" name="name" id="name" placeholder="Breed name">
     </div>
 </form>
+
 <div class="buttonbar">
     <button type="submit" name="addAnimalBreed" value="save">Add Animal Breed</button>
 </div>
+
 </body>
 </html>

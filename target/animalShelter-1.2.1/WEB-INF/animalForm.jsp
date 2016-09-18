@@ -12,6 +12,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<<<<<<< HEAD
+=======
+<%--<c:if test="${not empty loginError">--%>
+    <%--<script>--%>
+        <%--window.addEventListener("load",function(){--%>
+            <%--alert("${loginError}");--%>
+        <%--}--%>
+    <%--</script>--%>
+<%--</c:if>--%>
+
+>>>>>>> 9df49583765a39791eaecaf14dcca607bdd88500
 <html>
 <head>
     <title>Add / Edit Animal</title>
@@ -95,6 +106,7 @@
             <th>Note</th>
         </tr>
 
+<<<<<<< HEAD
         <% Animal animal = (Animal)request.getAttribute("animal"); %>
         <% for(Note note : animal.getNotes()){ %>
         <tr>
@@ -116,6 +128,30 @@
     <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
     <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
 </div>
+=======
+            <% Animal animal = (Animal)request.getAttribute("animal"); %>
+            <% for(Note note : animal.getNotes()){ %>
+            <tr>
+                <td>
+                    <!-- TODO: format the date!!!! -->
+                    <%= note.getDate() %>
+                </td>
+                <td>
+                    <%= note.getContent() %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+
+    </div>
+    <div class="buttonbar">
+        <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <!-- TODO: implement an are you sure check see TODO in AnimalFormServlet -->
+        <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
+        <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
+    </div>
+</form>
+>>>>>>> 9df49583765a39791eaecaf14dcca607bdd88500
 
 </body>
 </html>
