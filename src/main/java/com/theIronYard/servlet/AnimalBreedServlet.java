@@ -1,6 +1,7 @@
 package com.theIronYard.servlet;
 
 import com.theIronYard.entity.Animal;
+import com.theIronYard.entity.AnimalBreed;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +26,7 @@ public class AnimalBreedServlet extends AbstractServlet {
             req.setAttribute("id", id);
 
             // get the animal
-            Animal animal = animalService.getAnimal(id);
+            AnimalBreed animalBreed = animalService.getBreedId(id);
 
             req.setAttribute("animal", animal);
 

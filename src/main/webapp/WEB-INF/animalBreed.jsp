@@ -33,11 +33,10 @@
 </div>
 <table>
     <tr>
-        <th>Type</th>
+        <th>Breed</th>
         <th></th>
     </tr>
-    <% Animal animal = (Animal)request.getAttribute("animal"); %>
-    <% for(AnimalBreed animalBreed : animal.getBreed()) { %>
+    <% for(AnimalBreed animalBreed : breeds()) { %>
     <tr>
         <td>
             <%= animal.getBreed() %>
