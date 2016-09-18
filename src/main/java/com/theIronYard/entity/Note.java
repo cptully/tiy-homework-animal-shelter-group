@@ -38,6 +38,11 @@ public class Note {
 
     public LocalDateTime getDate() {return date;}
 
+    public String getFormattedDate() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy");
+        return date.format(format);
+    }
+
 
     @Override
     public boolean equals(Object o) {

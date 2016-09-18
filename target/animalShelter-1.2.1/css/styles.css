@@ -113,3 +113,8 @@ form input[type="text"] {
     display: block;
     width: 100%
 }
+
+#notes-block {
+    display: block;
+    clear: both;
+}
