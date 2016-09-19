@@ -130,3 +130,7 @@ form input[type="text"] {
     margin-right: 1em;
     vertical-align: top;
 }
+
+.delete-btn{
+    width: 20px;
+}

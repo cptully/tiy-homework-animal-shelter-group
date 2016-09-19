@@ -87,7 +87,7 @@
             <strong>Breed:</strong> <%= animal.getBreed().getName()%><br/>
             <strong>Color:</strong> <%= animal.getColor()%><br/>
             <strong>Description:</strong> <%= animal.getDescription()%><br/>
-            <strong>Notes:</strong> <%= animal.getNoteCount()%> notes <br/>
+            <strong>Notes:</strong> <a href="/animalNotes?id=<%= animal.getId()%>"><%= animal.getNoteCount()%> notes</a><br/>
 
         </div>
     </div>

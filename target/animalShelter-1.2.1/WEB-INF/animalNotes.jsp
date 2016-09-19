@@ -16,21 +16,23 @@
 <body>
 
 <h1>Chris, Dave and Jeff's Animal Shelter</h1>
-
-<ul>
-    <li><a href="/">List Animals</a></li>
-    <li><a href="/animalForm">Add an Animal</a></li>
-</ul>
+<nav>
+    <ul>
+        <li><a href="/">List Animals</a></li>
+        <li><a href="/animalForm">Add an Animal</a></li>
+    </ul>
+</nav>
 
 <h2>Animal Notes</h2>
 
 <div class="animal">
     <img src="/images/captainmycaptain.jpg" />
+    <input type="hidden" name="id" value="${animal.getId()}" />
 
     <div class="detail">
         <a href="animalForm?id=${animal.getId()}">${animal.getName()}</a><br/>
         <strong>Type:</strong> ${animal.getType().getTypeName()}<br/>
-        <strong>Breed:</strong> ${animal.getBreed().getBreed}<br/>
+        <strong>Breed:</strong> ${animal.getBreed().getName()}<br/>
         <strong>Color:</strong> ${animal.getColor()}<br/>
         <strong>Description:</strong> ${animal.getDescription()}<br/>
     </div>
@@ -52,7 +54,7 @@
             <%= note.getContent() %>
         </td>
         <td>
-            <a href="/deleteNote?animalId=<%= animal.getId() %>&noteId=<%= note.getId() %>"><img src="images/delete.jpeg" alt="Delete" /></a>
+            <a href="/deleteNote?animalId=<%= animal.getId() %>&noteId=<%= note.getId() %>"><img class="delete-btn" src="images/delete.jpeg" alt="Delete" /></a>
         </td>
     </tr>
     <% } %>
@@ -70,7 +72,7 @@
 
     </div>
 
-    <button>Add Note</button>
+    <button type="submit" name="addNote" value="addNote">Add Note</button>
 </form>
 
 </body>

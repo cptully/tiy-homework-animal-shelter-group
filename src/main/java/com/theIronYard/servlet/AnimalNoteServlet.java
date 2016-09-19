@@ -40,25 +40,14 @@ public class AnimalNoteServlet extends AbstractServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            // get the id of the animal we're adding a note to
+            // get the posted data
             Integer id = getParameterAsInt(req, "id");
-            req.setAttribute("id", id);
-
-            // get the animal
-            Animal animal = animalService.getAnimal(id);
-
-            // get the text of the note
-            String noteText = getParameterAsString(req, "note");
-
-            // make a note
-            Note note = new Note(noteText);
-
-            // add the note to the animal
-            animal.getNotes().add(note);
-
-            // save the animal
-            animalService.editAnimal(animal);
-
+            if (req.getParameter("addNote") != null) {
+                String note = getParameterAsString(req, "note");
+                if (!(note == null || note.equals(""))) {
+                    animalService.addNote(id, note);
+                }
+            }
             resp.sendRedirect("/animalNotes?id=" + id);
         } catch (SQLException e) {
             e.printStackTrace();
