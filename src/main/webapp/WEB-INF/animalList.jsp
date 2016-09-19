@@ -16,6 +16,7 @@
         <ul>
             <li><a href="/">Animals</a></li>
             <li><a href="/animalForm">Add an Animal</a></li>
+            <li><a href="/animalBreed">Manage Animal Breeds</a></li>
         </ul>
     </nav>
 
