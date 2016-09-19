@@ -67,7 +67,7 @@
     <select name="breedId" id="breedId">
         <option></option>
         <% for(AnimalBreed animalBreed : (ArrayList<AnimalBreed>)request.getAttribute("breeds")) { %>
-        <option value="<%= animalBreed.getTypeId() %>"
+        <option value="<%= animalBreed.getBreedId() %>"
                 <%= animalBreed.getName().equals(((Animal)request.getAttribute("animal")).getBreed().getName()) ? "selected='true'" : ""%> >
             <%= animalBreed.getName() %>
         </option>
