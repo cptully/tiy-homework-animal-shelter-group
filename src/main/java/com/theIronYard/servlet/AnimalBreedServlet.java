@@ -1,6 +1,5 @@
 package com.theIronYard.servlet;
 
-import com.theIronYard.entity.Animal;
 import com.theIronYard.entity.AnimalBreed;
 import com.theIronYard.entity.AnimalType;
 

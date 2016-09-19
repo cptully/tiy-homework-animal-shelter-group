@@ -42,10 +42,6 @@ nav a {
     background-color: #cc0323;
 }
 
-#searchbar.searchBarItem{
-    /*display: inline;*/
-}
-
 label {
     display: inline-block;
     width: 100px;
@@ -117,4 +113,20 @@ form input[type="text"] {
 #notes-block {
     display: block;
     clear: both;
+}
+
+.animal{
+    display: block;
+    border: 1px solid black;
+    clear: both;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+}
+
+.animal img{
+    width: 100px;
+    display: inline-block;
+    float: left;
+    margin-right: 1em;
+    vertical-align: top;
 }

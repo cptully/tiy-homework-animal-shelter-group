@@ -7,7 +7,7 @@
 <html>
 <head>
     <title>Animal Shelter</title>
-    <link rel="stylesheet" href="/css/listStyles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
     <h1>Chris, Dave and Jeff's Animal Shelter</h1>
@@ -17,6 +17,7 @@
             <li><a href="/">Animals</a></li>
             <li><a href="/animalForm">Add an Animal</a></li>
             <li><a href="/animalBreed">Manage Animal Breeds</a></li>
+            <li><a href="/animalType">Manage Animal Types</a></li>
         </ul>
     </nav>
 

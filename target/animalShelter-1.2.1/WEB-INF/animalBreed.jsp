@@ -15,7 +15,17 @@
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-<h1>Manage Animal Breeds</h1>
+<h1>Chris, Dave and Jeff's Animal Shelter</h1>
+<nav>
+    <ul>
+        <li><a href="/">List Animals</a></li>
+        <li><a href="/animalForm">Add an Animal</a></li>
+        <li><a href="/animalType">Manage Animal Types</a> </li>
+    </ul>
+</nav>
+
+<h2>Manage Animal Breeds</h2>
+
 <table>
     <tr>
         <th>Breed</th>

@@ -1,6 +1,7 @@
 package com.theIronYard.servlet;
 
 import com.theIronYard.entity.Animal;
+import com.theIronYard.entity.AnimalBreed;
 import com.theIronYard.entity.AnimalType;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by chris on 9/16/16.
@@ -26,9 +28,8 @@ public class AnimalTypeServlet extends AbstractServlet {
             req.setAttribute("id", id);
 
             // get the animal
-            Animal animal = animalService.getAnimal(id);
-
-            req.setAttribute("animal", animal);
+            ArrayList<AnimalType> animalTypes = animalService.listTypes();
+            req.setAttribute("types", animalTypes);
 
         } catch (SQLException e) {
             throw new ServletException("Error showing animal types", e);
@@ -41,26 +42,15 @@ public class AnimalTypeServlet extends AbstractServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            // get the id of the animal we're adding a breed to
-            Integer id = getParameterAsInt(req, "id");
-            req.setAttribute("id", id);
-
-            // get the animal
-            Animal animal = animalService.getAnimal(id);
-
-            // get the text of the type
-            String type = getParameterAsString(req, "type");
-
-            // make new type
-            AnimalType animalType = new AnimalType(type);
-
-            // add the type to the animal
-            //animal.getType().add(animalType);
-
-            // save the animal
-            animalService.editAnimal(animal);
-
-            resp.sendRedirect("/animalType?id=" + id);
+            // get the posted data
+            if (req.getParameter("addAnimalType") != null) {
+                String typeName = getParameterAsString(req, "typeName");
+                if (!(typeName == null || typeName.equals(""))) {
+                    AnimalType animalType = new AnimalType(typeName);
+                    animalService.addType(animalType);
+                }
+            }
+            resp.sendRedirect("/animalType");
         } catch (SQLException e) {
             e.printStackTrace();
         }
