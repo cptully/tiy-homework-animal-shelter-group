@@ -26,7 +26,7 @@
     <ul>
         <li><a href="/">List Animals</a></li>
         <li><a href="/animalForm">Add an Animal</a></li>
-        <li><a href="/animalType">Manage Animal Types</a> </li>
+        <li><a href="/animalType">Manage Animal Types</a></li>
         <li><a href="/animalBreed">Manage Animal Breeds</a></li>
     </ul>
 </nav>
@@ -85,40 +85,40 @@
         </label>
         <input type="text" name="description" id="description" value="${animal.getDescription()}">
     </div>
+    <!-- TODO: need to figure out how to hide the image when adding an animal -->
+    <div id="notes-block">
+        <label for="notes">
+            <strong>Notes</strong>
+        </label>
+        <table id="notes">
+            <tr>
+                <th>Date</th>
+                <th>Note</th>
+            </tr>
+
+            <% Animal animal = (Animal)request.getAttribute("animal"); %>
+            <% for(Note note : animal.getNotes()){ %>
+            <tr>
+                <td>
+                    <!-- TODO: format the date!!!! -->
+                    <%= note.getFormattedDate() %>
+                </td>
+                <td>
+                    <%= note.getContent() %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+
+    </div>
+    <div class="buttonbar">
+        <button type="submit" name="saveAnimal" value="save">Save Animal</button>
+        <!-- TODO: implement an are you sure check see TODO in AnimalFormServlet -->
+        <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
+        <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
+    </div>
 </form>
-<!-- TODO: need to figure out how to hide the image when adding an animal -->
 <img id="mainImage" src="images/captainmycaptain.jpg" />
-<div id="notes-block">
-    <label for="notes">
-        <strong>Notes</strong>
-    </label>
-    <table id="notes">
-        <tr>
-            <th>Date</th>
-            <th>Note</th>
-        </tr>
-
-        <% Animal animal = (Animal)request.getAttribute("animal"); %>
-        <% for(Note note : animal.getNotes()){ %>
-        <tr>
-            <td>
-                <!-- TODO: format the date!!!! -->
-                <%= note.getFormattedDate() %>
-            </td>
-            <td>
-                <%= note.getContent() %>
-            </td>
-        </tr>
-        <% } %>
-    </table>
-
-</div>
-<div class="buttonbar">
-    <button type="submit" name="saveAnimal" value="save">Save Animal</button>
-    <!-- TODO: implement an are you sure check see TODO in AnimalFormServlet -->
-    <!-- <button type="submit" name="editNotes" value="editNotes">Edit Notes</button> -->
-    <button type="submit" name="deleteAnimal" value="delete">Delete Animal</button>
-</div>
 
 </body>
 </html>

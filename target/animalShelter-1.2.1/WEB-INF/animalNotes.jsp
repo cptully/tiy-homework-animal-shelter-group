@@ -48,7 +48,7 @@
     <% for(Note note : animal.getNotes()){ %>
     <tr>
         <td>
-            <%= note.getDate() %>
+            <%= note.getFormattedDate() %>
         </td>
         <td>
             <%= note.getContent() %>
