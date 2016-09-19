@@ -37,7 +37,7 @@
             <%= animalBreed.getName() %>
         </td>
         <td>
-            <a href="/deleteNote?breedId=<%= animalBreed.getBreedId() %>><img src="images/delete.png" alt="Delete" /></a>
+            <a href="/deleteAnimalBreed?breedId=<%= animalBreed.getBreedId() %>"> <img class="delete-btn" src="images/delete.jpeg" alt="Delete" /></a>
         </td>
     </tr>
     <% } %>

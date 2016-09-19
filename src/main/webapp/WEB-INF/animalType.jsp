@@ -36,7 +36,7 @@
             <%= animalType.getTypeName() %>
         </td>
         <td>
-            <a href="/deleteNote?typeId=<%= animalType.getTypeId() %>><img src="images/delete.png" alt="Delete" /></a>
+            <a href="/deleteAnimalType?typeId=<%= animalType.getTypeId() %>"><img class="delete-btn" src="images/delete.jpeg" alt="Delete" /></a>
         </td>
     </tr>
     <% } %>
